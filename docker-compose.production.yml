@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  listener:
+    image: 2cood.com:5000/alphasmithy:latest
+    container_name: AlphaSmithy.Listener
+    environment:
+      ENV: production
+    deploy:
+      replicas: 1
+      update_config:
+        parallelism: 0
+        delay: 10s
+      restart_policy:
+        condition: on-failure
