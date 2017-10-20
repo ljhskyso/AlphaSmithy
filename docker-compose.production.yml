@@ -2,8 +2,9 @@ version: '3'
 
 services:
   listener:
-    image: 2cood.com:5000/alphasmithy:latest
-    container_name: AlphaSmithy.Listener
+    image: ljhskyso/alphasmithy:latest
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
     environment:
       ENV: production
     deploy:
